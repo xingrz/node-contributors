@@ -26,5 +26,10 @@ $ contributors --help
 
 ```
 
+## Contributors
+Ordered by date of first contribution. [Auto-generated](https://github.com/xingrz/node-contributors) on Fri, 28 Dec 2012 16:46:42 GMT.
+
+- [XiNGRZ](https://github.com/xingrz)
+
 ## License
 `contributors` is available under the terms of the [MIT License](https://github.com/xingrz/node-contributors/blob/master/LICENSE).
