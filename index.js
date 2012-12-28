@@ -1,1 +1,1 @@
-module.exports = require('./lib/contribs')
+module.exports = require('./lib/contributors')

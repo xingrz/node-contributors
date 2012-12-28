@@ -1,0 +1,98 @@
+#!/usr/bin/env node
+
+var Contributors  = require('../')
+  , program       = require('commander')
+  , Progress      = require('progress')
+  , path          = require('path')
+  , fs            = require('fs')
+  , util          = require('util')
+
+program
+  .version('0.1.0')
+  .option('-d, --dir <path>', 'specified the dir of repo')
+  .option('-f, --format <json|md>', 'specified output format', 'md')
+  .option('-o, --output [CONTRIBUTORS.md]', 'writes to file', 'CONTRIBUTORS.md')
+  .parse(process.argv)
+
+var dir    = program.dir || process.cwd()
+  , format = (program.format && -1 != ['json', 'md'].indexOf(program.format))
+           ? program.format
+           : 'md'
+  , output = program.output
+           ? path.resolve(program.output)
+           : null
+
+var progressBar
+
+new Contributors()
+  .on('fetching', function(count) {
+    progressBar = new Progress('fetching [:bar] :current / :total ...', {
+        complete: '='
+      , incomplete: ' '
+      , width: 20
+      , total: count
+    })
+    progressBar.tick(0)
+  })
+  .on('fetched', function() {
+    progressBar.tick(1)
+  })
+  .on('done', function(result) {
+    console.log('')
+    console.log('')
+
+    if ('md' == format)
+      result = generateMd(result)
+
+    if ('json' == format) {
+      console.log(util.inspect(result, null, null, true))
+    } else {
+      console.log(result)
+    }
+
+    if (output) {
+      fs.exists(path.dirname(output), function(ex) {
+        if (!ex) {
+          console.log('')
+          console.log('  error: output destination does not exists.')
+          console.log('')
+          return process.exit(-1)
+        }
+
+        fs.writeFile(output, result + "\n", function(err) {
+          if (err) {
+            console.log('')
+            console.log(err)
+            console.log('')
+            return process.exit(-1)
+          } else {
+            console.log('')
+            return process.exit(0)
+          }
+        })
+      })
+    } else {
+      console.log('')
+      return process.exit(0)
+    }
+  })
+  .on('error', function(err) {
+    console.log('')
+    console.log('')
+    console.log(err)
+    console.log('')
+    return process.exit(-1)
+  })
+  .fetch(dir)
+
+function generateMd(json) {
+  var lead = 'Ordered by date of first contribution.'
+           + ' [Auto-generated](https://github.com/xingrz/node-contributors) on '
+           + new Date(json.generatedAt).toUTCString() + ".\n\n"
+
+  return lead + json.contributors.map(function(i) {
+    return '- '
+         + '[' + i.name + ']'
+         + '(' + i.link + ')'
+  }).join("\n")
+}
