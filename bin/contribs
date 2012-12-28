@@ -1,3 +1,0 @@
-#!/usr/lib/env node
-
-var contribs = require('../')
