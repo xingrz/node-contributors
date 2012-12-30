@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var Contributors  = require('../')
+  , package       = require('../package.json')
   , program       = require('commander')
   , Progress      = require('progress')
   , path          = require('path')
@@ -8,7 +9,7 @@ var Contributors  = require('../')
   , util          = require('util')
 
 program
-  .version('0.2.0')
+  .version(package.version)
   .option('-d, --dir <path>', 'specified the dir of repo')
   .option('-f, --format <md|json|plain>', 'specified output format', 'md')
   .option('-o, --output [AUTHORS.md]', 'writes to file')
