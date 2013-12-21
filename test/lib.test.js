@@ -94,7 +94,7 @@ describe('contributors.js', function() {
           result.should.be.an.instanceOf(Object)
           should.exists(result.generatedAt)
           should.exists(result.contributors)
-          result.generatedAt.should.be.a('number')
+          result.generatedAt.should.be.a.Number
           result.contributors.should.be.an.instanceOf(Array)
           done()
         })
