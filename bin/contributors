@@ -134,7 +134,7 @@ function generatePlain(json) {
            + "# https://github.com/xingrz/node-contributors\n\n"
 
   return lead + json.contributors.map(function(i) {
-    return i.name
+    return (i.login || i.name)
          + ' <' + i.email + '>'
          + ' (https://github.com/' + i.login + ')'
   }).join("\n")
