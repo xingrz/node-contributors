@@ -8,13 +8,10 @@ contributors
 [npm-url]: https://www.npmjs.org/package/contributors
 [npm-img-dm]: https://img.shields.io/npm/dm/contributors.svg?style=flat-square
 [npm-img-v]: https://img.shields.io/npm/v/contributors.svg?style=flat-square
-[tag-url]: https://github.com/xingrz/node-contributors
-[tag-img]: https://img.shields.io/github/tag/xingrz/node-contributors.svg?style=flat-square
 [deps-url]: https://david-dm.org/xingrz/node-contributors
-[deps-img]: https://img.shields.io/david/node-contributors.svg?style=flat-square
-[deps-img-dev]: https://img.shields.io/david/dev/node-contributors.svg?style=flat-square
+[deps-img]: https://img.shields.io/david/xingrz/node-contributors.svg?style=flat-square
 [license-url]: LICENSE
-[license-img]: httpss://img.shields.io/npm/l/contributors.svg?style=flat-square
+[license-img]: https://img.shields.io/npm/l/contributors.svg?style=flat-square
 [issues-url]: https://github.com/xingrz/node-contributors/issues
 [issues-img]: https://img.shields.io/github/issues/xingrz/node-contributors.svg?style=flat-square
 
