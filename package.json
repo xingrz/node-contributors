@@ -7,7 +7,7 @@
     "contributors": "./bin/contributors"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec --timeout 15000"
   },
   "repository": {
     "type": "git",
@@ -17,12 +17,12 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "commander": "*",
-    "progress": "*",
-    "urllib": "*"
+    "commander": ">=2.2.0",
+    "progress": ">=1.1.5",
+    "urllib": ">=0.5.13"
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": ">=3.3.0"
   }
 }
