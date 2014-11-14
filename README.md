@@ -1,7 +1,7 @@
 contributors
 ==========
 
-[![][travis-img]][travis-url] [![][npm-img-dm]][npm-url] [![][npm-img-v]][npm-url] [![][tag-img]][tag-url] [![][deps-img]][deps-url] [![][deps-img-dev]][deps-url] [![][license-img]][license-url] [![][issues-img]][issues-url]
+[![][travis-img]][travis-url] [![][npm-img-dm]][npm-url] [![][npm-img-v]][npm-url] [![][deps-img]][deps-url] [![][license-img]][license-url] [![][issues-img]][issues-url]
 
 [travis-url]: https://travis-ci.org/xingrz/node-contributors
 [travis-img]: https://img.shields.io/travis/xingrz/node-contributors.svg?style=flat-square
