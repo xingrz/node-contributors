@@ -3,6 +3,9 @@
   "version": "0.2.3",
   "description": "Generate a Markdown list of contributors to your GitHub repository.",
   "main": "index.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "bin": {
     "contributors": "./bin/contributors"
   },
