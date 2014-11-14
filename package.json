@@ -13,7 +13,11 @@
     "type": "git",
     "url": "git://github.com/xingrz/node-contributors.git"
   },
-  "author": "XiNGRZ <chenxingyu92@gmail.com>",
+  "author": "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
+  "contributors": [
+    "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
+    "fengmk2 <fengmk2@gmail.com> (http://fengmk2.cnpmjs.org/)"
+  ],
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
