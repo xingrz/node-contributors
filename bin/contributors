@@ -46,9 +46,6 @@ new Contributors()
       case 'md':
         result = generateMd(result)
         break
-      case 'json':
-        result = generateJSON(result)
-        break
       case 'plain':
         result = generatePlain(result)
         break
@@ -109,22 +106,10 @@ function generateMd(json) {
            + new Date(json.generatedAt).toUTCString() + ".\n\n"
 
   return lead + json.contributors.map(function(i) {
-    return '- '
-         + '[' + i.name + ']'
-         + '(https://github.com/' + i.login + ')'
+    return 'undefined' === typeof i.web
+         ? util.format('- %s', i.name)
+         : util.format('- [%s](%s)', i.name, i.web)
   }).join("\n")
-}
-
-function generateJSON(json) {
-  return {
-    contributors: json.contributors.map(function(i) {
-      return {
-          name: i.name
-        , email: i.email
-        , web: 'https://github.com/' + i.login
-      }
-    })
-  }
 }
 
 function generatePlain(json) {
@@ -134,9 +119,9 @@ function generatePlain(json) {
            + "# https://github.com/xingrz/node-contributors\n\n"
 
   return lead + json.contributors.map(function(i) {
-    return (i.login || i.name)
-         + ' <' + i.email + '>'
-         + ' (https://github.com/' + i.login + ')'
+    return 'undefined' === typeof i.web
+         ? util.format('- %s <%s>', i.name, i.email)
+         : util.format('- %s <%s> (%s)', i.name, i.email, i.web)
   }).join("\n")
 }
 
