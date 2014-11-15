@@ -1,6 +1,6 @@
 {
   "name": "contributors",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Generate a Markdown list of contributors to your GitHub repository.",
   "main": "index.js",
   "engines": {

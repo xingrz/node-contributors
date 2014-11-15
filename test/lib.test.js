@@ -13,28 +13,31 @@ describe('contributors.js', function() {
       Contributors().should.be.an.instanceOf(Contributors)
     })
 
-    describe('.getEmails()', function() {
+    describe('.getLog()', function() {
 
       it('should be ok', function() {
-        should.exists(instance.getEmails)
+        should.exists(instance.getLog)
       })
 
       it('should return the instance of Contributors', function() {
-        instance.getEmails().should.be.an.instanceOf(Contributors)
+        instance.getLog().should.be.an.instanceOf(Contributors)
       })
 
-      it('should callback an array of emails in a git repo', function(done) {
-        instance.getEmails('./', function(err, emails) {
+      it('should callback an array of contributors in a git repo', function(done) {
+        instance.getLog('./', function(err, contributors) {
           should.not.exist(err)
-          emails.should.be.ok
-          emails.should.be.an.instanceOf(Array)
-          emails.should.not.be.empty
+          contributors.should.be.ok
+          contributors.should.be.an.instanceOf(Array)
+          contributors.should.containEql({
+            name: 'XiNGRZ'
+          , email: 'chenxingyu92@gmail.com'
+          })
           done()
         })
       })
 
       it('should callback an error if not in a git repo', function(done) {
-        instance.getEmails('/tmp', function(err) {
+        instance.getLog('/tmp', function(err) {
           should.exists(err)
           should.exists(err.code)
           err.code.should.equal('GITError')
