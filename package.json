@@ -26,7 +26,8 @@
   "dependencies": {
     "commander": ">=2.2.0",
     "progress": ">=1.1.5",
-    "urllib": ">=0.5.13"
+    "urllib": ">=0.5.13",
+    "lodash": ">=2.4.1"
   },
   "devDependencies": {
     "mocha": "*",
