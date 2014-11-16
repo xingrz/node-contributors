@@ -39,9 +39,6 @@ new Contributors()
     progressBar.tick(1)
   })
   .on('done', function(result) {
-    console.log('')
-    console.log('')
-
     switch (format) {
       case 'md':
         result = generateMd(result)
@@ -62,9 +59,8 @@ new Contributors()
     if (output) {
       fs.exists(path.dirname(output), function(ex) {
         if (!ex) {
-          console.log('')
-          console.log('  error: output destination does not exists.')
-          console.log('')
+          console.error('')
+          console.error('Error: output destination does not exists.')
           return process.exit(-1)
         }
 
@@ -76,26 +72,21 @@ new Contributors()
 
         fs.writeFile(output, result, function(err) {
           if (err) {
-            console.log('')
-            console.log(err)
-            console.log('')
+            console.error('')
+            console.error(formatError(err))
             return process.exit(-1)
           } else {
-            console.log('')
             return process.exit(0)
           }
         })
       })
     } else {
-      console.log('')
       return process.exit(0)
     }
   })
   .on('error', function(err) {
-    console.log('')
-    console.log('')
-    console.log(err)
-    console.log('')
+    console.error('')
+    console.error(formatError(err))
     return process.exit(-1)
   })
   .fetch(dir)
@@ -120,8 +111,8 @@ function generatePlain(json) {
 
   return lead + json.contributors.map(function(i) {
     return 'undefined' === typeof i.web
-         ? util.format('- %s <%s>', i.name, i.email)
-         : util.format('- %s <%s> (%s)', i.name, i.email, i.web)
+         ? util.format('%s <%s>', i.name, i.email)
+         : util.format('%s <%s> (%s)', i.name, i.email, i.web)
   }).join("\n")
 }
 
@@ -135,4 +126,10 @@ function resolve(name, format) {
       case 'plain': return 'AUTHORS'
     }
   }
+}
+
+function formatError(err) {
+  return err.message
+       ? util.format('%s: %s', err.name || 'Error', err.message)
+       : err
 }
