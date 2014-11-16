@@ -67,13 +67,11 @@ describe('contributors.js', function() {
         })
       })
 
-      it('should callback an error with status code 404 if not exists', function(done) {
+      it('should callback EmailNotFoundError if not exists', function(done) {
         instance.getProfile('(a fake email not exists)', function(err) {
           should.exists(err)
           should.exists(err.code)
-          should.exists(err.status)
-          err.code.should.equal('APIError')
-          err.status.should.equal(404)
+          err.code.should.equal('EmailNotFoundError')
           done()
         })
       })
