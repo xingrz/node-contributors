@@ -8,7 +8,8 @@
   },
   "contributors": [
     "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
-    "fengmk2 <fengmk2@gmail.com> (http://fengmk2.cnpmjs.org/)"
+    "fengmk2 <fengmk2@gmail.com> (http://fengmk2.cnpmjs.org/)",
+    "Jamie Mason (https://github.com/JamieMason)"
   ],
   "dependencies": {
     "async": "1.5.2",
