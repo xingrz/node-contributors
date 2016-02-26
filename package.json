@@ -1,28 +1,15 @@
 {
   "name": "contributors",
-  "version": "0.5.0",
   "description": "Generate a Markdown list of contributors to your GitHub repository.",
-  "main": "index.js",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
+  "version": "0.5.0",
+  "author": "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
   "bin": {
     "contributors": "./bin/contributors"
   },
-  "scripts": {
-    "test": "mocha -R spec --timeout 15000"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/xingrz/node-contributors.git"
-  },
-  "author": "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
   "contributors": [
     "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
     "fengmk2 <fengmk2@gmail.com> (http://fengmk2.cnpmjs.org/)"
   ],
-  "license": "MIT",
-  "readmeFilename": "README.md",
   "dependencies": {
     "async": "1.5.2",
     "commander": "2.9.0",
@@ -33,5 +20,18 @@
   "devDependencies": {
     "mocha": "*",
     "should": "8.2.2"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xingrz/node-contributors.git"
+  },
+  "scripts": {
+    "test": "mocha -R spec --timeout 15000"
   }
 }
