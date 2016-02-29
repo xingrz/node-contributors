@@ -12,11 +12,11 @@
     "Jamie Mason (https://github.com/JamieMason)"
   ],
   "dependencies": {
-    "async": "1.5.2",
-    "commander": "2.9.0",
-    "lodash.uniq": "4.2.0",
-    "progress": "1.1.8",
-    "urllib": "2.7.2"
+    "async": "~1.5.2",
+    "commander": "~2.9.0",
+    "lodash.uniq": "~4.2.0",
+    "progress": "~1.1.8",
+    "urllib": "~2.7.2"
   },
   "devDependencies": {
     "mocha": "*",
