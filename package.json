@@ -1,14 +1,14 @@
 {
   "name": "contributors",
   "description": "Generate a Markdown list of contributors to your GitHub repository.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
   "bin": {
     "contributors": "./bin/contributors"
   },
   "contributors": [
     "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
-    "fengmk2 <fengmk2@gmail.com> (http://fengmk2.cnpmjs.org/)",
+    "fengmk2 <fengmk2@gmail.com> (http://fengmk2.com/)",
     "Jamie Mason (https://github.com/JamieMason)"
   ],
   "dependencies": {
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "8.2.2"
+    "should": "8"
   },
   "engines": {
     "node": ">= 0.10.0"
