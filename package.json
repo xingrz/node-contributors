@@ -1,37 +1,38 @@
 {
   "name": "contributors",
-  "version": "0.5.0",
   "description": "Generate a Markdown list of contributors to your GitHub repository.",
-  "main": "index.js",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
+  "version": "0.5.0",
+  "author": "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
   "bin": {
     "contributors": "./bin/contributors"
   },
-  "scripts": {
-    "test": "mocha -R spec --timeout 15000"
+  "contributors": [
+    "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
+    "fengmk2 <fengmk2@gmail.com> (http://fengmk2.cnpmjs.org/)",
+    "Jamie Mason (https://github.com/JamieMason)"
+  ],
+  "dependencies": {
+    "async": "~1.5.2",
+    "commander": "~2.9.0",
+    "lodash.uniq": "~4.2.0",
+    "progress": "~1.1.8",
+    "urllib": "~2.7.2"
   },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "8.2.2"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/xingrz/node-contributors.git"
   },
-  "author": "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
-  "contributors": [
-    "XiNGRZ <chenxingyu92@gmail.com> (http://xingrz.me/)",
-    "fengmk2 <fengmk2@gmail.com> (http://fengmk2.cnpmjs.org/)"
-  ],
-  "license": "MIT",
-  "readmeFilename": "README.md",
-  "dependencies": {
-    "commander": ">=2.2.0",
-    "progress": ">=1.1.5",
-    "urllib": ">=0.5.13",
-    "lodash": ">=2.4.1",
-    "async": ">=0.9.0"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "should": ">=3.3.0"
+  "scripts": {
+    "test": "mocha -R spec --timeout 15000"
   }
 }
