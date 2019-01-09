@@ -16,7 +16,7 @@
     "commander": "~2.9.0",
     "lodash.uniq": "~4.2.0",
     "progress": "~1.1.8",
-    "urllib": "~2.7.2"
+    "urllib": "^2.33.0"
   },
   "devDependencies": {
     "mocha": "*",
